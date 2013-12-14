@@ -1,0 +1,10 @@
+8
+DTZ 1
+DTZ 2
+DTZ 3
+DTZ 4
+DTZ 5
+DTZ 6
+DTZ 10
+DTZ 15
+
