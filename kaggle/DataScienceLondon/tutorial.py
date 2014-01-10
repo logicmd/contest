@@ -3,7 +3,7 @@
 # @Author: Kai
 # @Date:   2013-12-22 22:19:49
 # @Last Modified by:   Kai
-# @Last Modified time: 2013-12-22 22:52:47
+# @Last Modified time: 2013-12-29 16:53:41
 from sklearn.datasets import load_digits
 import pylab as pl
 from sklearn.decomposition import PCA
@@ -25,6 +25,16 @@ pca = PCA(n_components=2)
 pca.fit(X)
 X_pca = pca.transform(X)
 #print X_pca.shape
-pl.figsize(16,10)
-pl.scatter(X_pca[:,0], X_pca[:,1])
+#pl.figsize(16,10)
+pl.scatter(X_pca[:,0], X_pca[:,1], c='rgbymck')
+pl.show()
+
+print(pca.mean_.shape)
+print(pca.components_.shape)
+
+fix, ax = pl.subplots(1, 3)
+ax[0].matshow(pca.mean_.reshape(8, 8))
+ax[1].matshow(pca.components_[0, :].reshape(8, 8))
+ax[2].matshow(pca.components_[1, :].reshape(8, 8))
+
 pl.show()
